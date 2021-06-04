@@ -70,7 +70,7 @@ def build_dataset_from_path(data_path, task=None, dataset=None):
     if dataset is not None and dataset in SUPPORTED_DATASETS:
         if try_import_dataset(dataset):
             return DATASET_REGISTRY[dataset](data_path=data_path)
-
+    print(f"data_path:{data_path} dataset:{dataset}")
     if task is None:
         return None
     if "node_classification" in task:
@@ -145,4 +145,5 @@ SUPPORTED_DATASETS = {
     "chem": "cogdl.datasets.strategies_data",
     "bace": "cogdl.datasets.strategies_data",
     "bbbp": "cogdl.datasets.strategies_data",
+    "github": "cogdl.datasets.zjutoid_data"
 }
